@@ -1,0 +1,23 @@
+
+
+compType = []
+brand = []
+cpuType = []
+ramType = []
+firstDisk = []
+totalHDD = []
+secondDisk = []
+sysOS = []
+yr = []
+
+totalComp = 0
+
+print("compType = ", compType)
+print("brand = ", brand)
+print("cpuType = ", cpuType)
+print("ramType = ", ramType)
+print("firstDisk = ", firstDisk)
+print("totalHDD = ", totalHDD)
+print("secondDisk = ", secondDisk)
+print("sysOS = ", sysOS)
+print("yr = ", yr, "\n")

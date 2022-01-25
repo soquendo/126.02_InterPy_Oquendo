@@ -1,0 +1,16 @@
+
+
+#==== printing a list++++
+
+
+#===== printing the size of each list ==== 
+print("id = ", len(idList))
+print("age =", len (ageList))
+print("Reg =", len(regList))
+print(Voted =", len(votedList), "\n")
+
+
+print(idlist[0], ", ", ageList[0], ", ", regList[0], ", ", votedList[0])
+
+for in range(0, 12):
+	print(idList[i], ", ", ageList[i], ", ", regList[i], ", ", votedList[i]) 
