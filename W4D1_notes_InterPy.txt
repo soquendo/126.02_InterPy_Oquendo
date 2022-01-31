@@ -1,0 +1,27 @@
+
+w4d1 demo notes - intermediate python
+create a list
+
+names = ["Sally", "Billy", "Gio", "Hank", "Dina", "John"]
+
+length = len(names)
+found = "false"
+
+search = input("Enter a name ")
+
+for col in range(0, length):
+	if(search == names[col]):
+		found = "True"
+		position = pos
+		
+if found == "True"
+	print(names[position])
+else:
+	print("Name not on list")
+		
+		
+		
+		
+		
+		
+		#-----------print("Found ", search, "It is in the", pos, "position.")

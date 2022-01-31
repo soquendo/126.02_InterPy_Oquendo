@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Lab4A_Oquendo", "Lab4A_Oquendo.pyproj", "{FC66FEA8-F8AA-4B5C-9FF6-FD050DE92421}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC66FEA8-F8AA-4B5C-9FF6-FD050DE92421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC66FEA8-F8AA-4B5C-9FF6-FD050DE92421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8BAF5CE4-E7D6-448C-9594-E3D462114316}
+	EndGlobalSection
+EndGlobal
