@@ -21,7 +21,27 @@ else:
 		
 		
 		
-		
-		
-		
 		#-----------print("Found ", search, "It is in the", pos, "position.")
+
+
+w4d2 notes
+
+lab4b - establish and display seat map via function
+
+for r in range (1, 8):
+	print("	", r, " ", aA[r]," ", aB[r])
+
+prompt user what seat they want
+- what row
+- what seat
+	- if its already taken
+
+def select_row():
+	r = int(input("What row would you like? "))
+	return r
+
+def select_seat():
+	s = input("What seat would you like?)
+	return s
+
+
