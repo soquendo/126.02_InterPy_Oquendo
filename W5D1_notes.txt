@@ -1,0 +1,30 @@
+
+name = ["Adam", "April", "Betty", "Bill", "Carl", "Cathy"]
+
+min = 0
+max = len(list) - 1
+
+guess = int((min+max)/2)
+
+#prompt user - Carl+target+ = input(" ")
+
+
+if(name[2]<target):
+    min = guess+1
+
+else:
+    max = guess-1
+
+guess = int((min+max)/2)
+
+#first guess -> int(0+5)/2 -> 2 | compare name[2] => "Carl"
+#second guess -> int(min+max)/2) | comapre name[4] => "Carl"
+
+#while (min < max) and (name[guess] != target)
+    
+
+#outside of loop
+#if (name[guess] == target):
+    #found
+#else:
+    #not found
