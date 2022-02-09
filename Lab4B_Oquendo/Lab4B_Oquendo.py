@@ -20,6 +20,23 @@ def selectSeat():
 
 	return seat
 
+def cont():
+	
+	answer = input("Would you like to make another reservation?: [Y/N]").upper()
+	while answer == "Y":
+
+		print("		 SEATING CHART\n\n")
+
+		seatMap(aisleA, aisleB, aisleC, aisleD)
+		print("\n")
+
+		row = selectRow()
+		seat = selectSeat()
+
+		seatAssign(row, seat, aisleA, aisleB, aisleC, aisleD)
+		print("\n")
+	
+
 def seatAssign(row, seat, aA, bB, cC, dD):
 
 	if seat == "A" and aA[row] != "X":
@@ -65,6 +82,8 @@ while answer == "y":
 
 	seatAssign(row, seat, aisleA, aisleB, aisleC, aisleD)
 	print("\n")
+
+	#cont()
 	
 
 	
