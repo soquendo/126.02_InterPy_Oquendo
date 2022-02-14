@@ -1,0 +1,182 @@
+with open("C:\\Users\Dan\Desktop\IntermediatePython\Labs\Lab4\Lab4c.txt") as csvFile:
+    file = csv.reader(csvFile)
+    for row in file:
+
+        firstName.append(row[0])
+        lastName.append(row[1])
+        phoneNumber.append(row[2])
+        email.append(row[3])
+        department.append(row[4])
+        position.append(row[5])
+
+------------------------------------
+
+import csv
+
+fnameList = []
+    lnameList = []
+    emphoneList = []
+    ememList = []
+    deptList = []
+    emposList = []
+
+-----------------------------------------
+
+def seatingChart(aA, bB, cC, dD):
+   
+    for x in range(1, 8):
+        print(" ", x, " ", aA[x], bB[x], "  ", cC[x], dD[x])
+   
+def rowNumber():
+    
+    row = int(input("\nEnter row number [1-7]: "))
+
+    return row
+
+def seatLetter():
+    
+    seat = input("\nEnter seat letter [A, B, C, D]: ").upper()
+    
+    return seat
+
+def assignSeat(row, seat, aList, bList, cList, dList):
+
+    if seat == "A" and aList[row] != "X":
+        aList[row] = "X"
+        print("\nYour seat has been reserved.")   
+    elif seat == "B" and bList[row] != "X":
+        bList[row] = "X"
+        print("\nYour seat has been reserved.")
+    elif seat == "C" and cList[row] != "X":
+        cList[row] = "X"
+        print("\nYour seat has been reserved.")
+    elif seat == "D" and dList[row] != "X":
+        dList[row] = "X"
+        print("\nYour seat has been reserved.")
+    else:
+        print("\nWARNING: Seat already reserved. Please pick another.")   
+
+#-----END FUNCTIONS-----#
+
+#-----START MAIN CODE-----#
+
+a = ["", "A", "A", "A", "A", "A", "A", "A"]
+b = ["", "B", "B", "B", "B", "B", "B", "B"]
+c = ["", "C", "C", "C", "C", "C", "C", "C"]
+d = ["", "D", "D", "D", "D", "D", "D", "D"]
+
+print("Welcome to the awesome seat picking program!")
+
+answer = "y"
+while answer == "y":
+
+    seatingChart(a, b, c, d)
+
+    row = rowNumber()
+    seat = seatLetter()
+    assignSeat(row, seat, a, b, c, d)
+
+    seatingChart(a, b, c, d) # called again to display the new seating chart after each selection.
+
+    answer = input("\nWould you like the reserve a seat? [y/n] ").lower()
+    while answer != "y" and answer != "n":
+        print("\nError - Invalid Entry. Enter y or n.")
+        answer = input("\nWould you like the reserve a seat? [y/n] ").lower()
+
+print("\n*Program Closing*\n")
+
+#-----END MAIN CODE-----#
+
+
+------------------------------------------------------
+
+
+while answer == "y":
+
+    seatingChart(a, b, c, d)
+
+    row = rowNumber()
+    seat = seatLetter()
+    assignSeat(row, seat, a, b, c, d)
+
+    seatingChart(a, b, c, d) # called again to display the new seating chart after each selection.
+
+    answer = input("\nWould you like the reserve a seat? [y/n] ").lower()
+    while answer != "y" and answer != "n":
+        print("\nError - Invalid Entry. Enter y or n.")
+        answer = input("\nWould you like the reserve a seat? [y/n] ").lower()
+
+print("\n*Program Closing*\n")
+
+
+------------------------------------------------------
+
+
+def nameCheck(name):
+
+    for i in range(0, len(lastName)):     
+        if lastName[i] == name:  
+            print("\nTotal Employees Searched Through: {0}".format(len(lastName)))
+            print("\nLast Name: {0}\nFirst Name: {1}\nPhone Number: {2}\nEmail: {3}\nDepartment: {4}\nPosition: {5}".format(lastName[i], firstName[i], phoneNumber[i], email[i], department[i], position[i]))                    
+            return
+
+    print("\nTotal Employees Searched Through: {0}".format(len(lastName)))
+    print("\nERROR: User Not Found")
+
+
+-----------------------------------
+
+if lnameList[pos] == search:
+
+------------------------------------
+
+
+with open("C:\\Users\Dan\Desktop\IntermediatePython\Labs\Lab4\Lab4c.txt") as csvFile:
+    file = csv.reader(csvFile)
+    for row in file:
+
+        firstName.append(row[0])
+        lastName.append(row[1])
+        phoneNumber.append(row[2])
+        email.append(row[3])
+        department.append(row[4])
+        position.append(row[5])
+
+
+----------------------------------------
+
+
+def nameCheck(name):
+
+    for i in range(0, len(lastName)):     
+        if lastName[i] == name:  
+            print("\nTotal Employees Searched Through: {0}".format(len(lastName)))
+            print("\nLast Name: {0}\nFirst Name: {1}\nPhone Number: {2}\nEmail: {3}\nDepartment: {4}\nPosition: {5}".format(lastName[i], firstName[i], phoneNumber[i], email[i], department[i], position[i]))                    
+            return
+
+    print("\nTotal Employees Searched Through: {0}".format(len(lastName)))
+    print("\nERROR: User Not Found")
+
+------------------------------------------
+but you could totally do something like
+counted = 0
+for i in range(0, len(lastName)):  
+counted = counted + 1
+or something like that may work
+but I just found it cleaner to print the length of the list
+
+
+-------------------------------------
+
+
+while answer == "y":
+
+    nameSearch = input("\nEnter the employees last name: ")
+    nameCheck(nameSearch)
+
+    answer = input("\nWould you like to search for another employee? [y/n] ").lower()
+
+print("\n*Program Closing*\n")
+
+
+--------------------------------------------

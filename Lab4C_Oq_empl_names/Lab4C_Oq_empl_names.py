@@ -3,32 +3,62 @@
 #02-09-22
 #Lab4C
 
-#--------------
-
-# 0  fName   =   employee first name
-# 1  lName   =   employee last name
-# 2  emPhone =   employee phone number
-# 3  emem    =   employee email
-# 4  dept    =   employee department
-# 5  emPos   =   employee position in department
+#------------------------------------------------------------------
 
 
+#   Lab4c       -   file stored in location defined in open
+#   col         -   used to read one column at a time from file
 
-#--------------
+#   fName       =   employee first name
+#   lName       =   employee last name
+#   emPhone     =   employee phone number
+#   emEmail        =   employee email
+#   dept        =   employee department
+#   emPos       =   employee position in department
+#   empCount    =   total number of employees
+
+#-----------------------------------------------------------------
+
+
+def nameSearch(search):
+
+        for pos in range(0, 73):
+            if search == lnameList[pos]:
+                #empInfo()
+                print("\nTotal Employees Searched Through: {0}".format(len(lnameList)))
+                print("\n {0}\n {1}\n {2}\n {3}\n {4}\n {5}\n".format(fnameList[pos], lnameList[pos], emphoneList[pos], ememList[pos], deptList[pos], emposList[pos]))
+
+            else:
+                print("\n*ERROR: User Not Found*")
+                print("\nTotal Employees Searched Through: {0}".format(len(lnameList)))
+
+                  
+
+def empInfo():
+
+        print("{0:8} {1:8}".format(fnameList[pos], lnameList[pos]))
+        print("{0:11} {1:32}".format(emphoneList[pos], ememList[pos]))
+        print("{0:10} {1:13}".format(deptList[pos], emposList[pos]))
+
+
+
+#-----------------------------------------------------------------------
 
 import csv
 
-with open("D:\Lab4c.csv") as csvfile:
-    lab4c = csv.reader(csvfile)
- 
+fnameList = []
+lnameList = []
+emphoneList = []
+ememList = []
+deptList = []
+emposList = []
 
-    fnameList = []
-    lnameList = []
-    emphoneList = []
-    ememList = []
-    deptList = []
-    emposList = []
-    
+empCount = 0
+
+
+
+with open("D:\Lab4c.txt") as txtfile:
+    lab4c = csv.reader(txtfile)
 
     for col in lab4c:
         fnameList.append(col[0])
@@ -37,17 +67,10 @@ with open("D:\Lab4c.csv") as csvfile:
         ememList.append(col[3])
         deptList.append(col[4])
         emposList.append(col[5])
-
-
     
-    length = len(lnameList)
-    found = "False"
-    search = input("Enter a name ")
-    for pos in range(0, length):
-        if(search == names[pos]):
-            found = "True"
-            position = pos
-        if found == "True":
-            print(names[position])
-        else:
-            print("Name not on list")
+answer = "y"
+while answer == "y":
+
+    search = input("Enter employee's last name (case-sensitive): ")
+    nameSearch(search)
+    

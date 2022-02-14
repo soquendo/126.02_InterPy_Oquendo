@@ -1,10 +1,16 @@
 #Sebastian Oquendo
 #Lab4B
 #SE126.02
-#02-02-22
+#02-14-22
 
+# ------------------------------------
 
+#	seatMap		=	function for display seating chart
+#	selectRow	=	function for user to select desired row
+#	selectSeat	=	function for user to select desired seat
+#	seatAssign	=	function for selecting seats and marking them unavailable
 
+#------------- FUNCTIONS ----------------
 
 def seatMap(aA, bB, cC, dD):
 	for r in range (1, 8):
@@ -22,7 +28,7 @@ def selectSeat():
 
 def cont():
 	
-	answer = input("Would you like to make another reservation?: [Y/N]").upper()
+	answer = input("Would you like to make another reservation? [Y/N]: ").upper()
 	while answer == "Y":
 
 		print("		 SEATING CHART\n\n")
@@ -36,54 +42,58 @@ def cont():
 		seatAssign(row, seat, aisleA, aisleB, aisleC, aisleD)
 		print("\n")
 	
+	if answer == "N":
+		print("\nThank you for placing your reservations.")
+
+	else:
+		print("\nINVALID ENTRY, PLEASE ANSWER Y OR N")
 
 def seatAssign(row, seat, aA, bB, cC, dD):
 
 	if seat == "A" and aA[row] != "X":
 		aA[row] = "X"
 		print(" \nYour reservation has been placed.")
-	if seat == "B" and bB[row] != "X":
+		
+	elif seat == "B" and bB[row] != "X":
 		bB[row] = "X"
 		print(" \nYour reservation has been placed.")
-	if seat == "C" and cC[row] != "X":
+		
+	elif seat == "C" and cC[row] != "X":
 		cC[row] = "X"
 		print(" \nYour reservation has been placed.")
-	if seat == "D" and dD[row] != "X":
+	
+	elif seat == "D" and dD[row] != "X":
 		dD[row] = "X"
 		print(" \nYour reservation has been placed.")
-	if seat == "X":
-		print(" \n *ERROR* This seat is already reserved, please select another: ")
-
-	#else:
-		#print(" \n *ERROR* This seat is already reserved, please select another: ")
 		
+	else:
+		input(" \n *ERROR* INVALID ENTRY, PLEASE SELECT ANOTHER SEAT - PRESS ANY KEY TO CONTINUE")
 
-
-
-#----------- MAIN -------------
-
-
+#---------------- MAIN -----------------
 
 aisleA = ["", "A", "A", "A", "A", "A", "A", "A"]
 aisleB = ["", "B", "B", "B", "B", "B", "B", "B"]
 aisleC = ["", "C", "C", "C", "C", "C", "C", "C"]
 aisleD = ["", "D", "D", "D", "D", "D", "D", "D"]
 
-answer = "y"
-while answer == "y":
+answer = "Y"
+while answer == "Y":
 
 	print("		 SEATING CHART\n\n")
 
 	seatMap(aisleA, aisleB, aisleC, aisleD)
 	print("\n")
 
-	row = selectRow()
-	seat = selectSeat()
+	row1 = selectRow()
+	seat1 = selectSeat()
 
-	seatAssign(row, seat, aisleA, aisleB, aisleC, aisleD)
+	seatAssign(row1, seat1, aisleA, aisleB, aisleC, aisleD)
 	print("\n")
+	seatMap(aisleA, aisleB, aisleC, aisleD)
 
-	#cont()
-	
+	answer = input("\nWould you like the reserve another seat? [Y/N]: ").upper()
+	while answer != "Y" and answer != "N":
+		print("\n*ERROR: INVALID ENTRY!* Please enter Y or N: ")
+		answer = input("\nWould you like the reserve a seat? [Y/N]: ").upper()
 
-	
+print("\nThank you for choosing to fly with us.")
