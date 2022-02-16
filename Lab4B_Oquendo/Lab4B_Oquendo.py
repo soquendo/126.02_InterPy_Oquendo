@@ -49,8 +49,10 @@ def cont():
 		print("\nINVALID ENTRY, PLEASE ANSWER Y OR N")
 
 def seatAssign(row, seat, aA, bB, cC, dD):
+	if row > 7:
+		input(" \n *ERROR* INVALID ENTRY, PLEASE SELECT ANOTHER SEAT - PRESS ANY KEY TO CONTINUE")
 
-	if seat == "A" and aA[row] != "X":
+	elif seat == "A" and aA[row] != "X":
 		aA[row] = "X"
 		print(" \nYour reservation has been placed.")
 		
@@ -79,7 +81,7 @@ aisleD = ["", "D", "D", "D", "D", "D", "D", "D"]
 answer = "Y"
 while answer == "Y":
 
-	print("		 SEATING CHART\n\n")
+	print("\n		 SEATING CHART\n\n")
 
 	seatMap(aisleA, aisleB, aisleC, aisleD)
 	print("\n")
@@ -91,9 +93,9 @@ while answer == "Y":
 	print("\n")
 	seatMap(aisleA, aisleB, aisleC, aisleD)
 
-	answer = input("\nWould you like the reserve another seat? [Y/N]: ").upper()
+	answer = input("\nWould you like to reserve a seat? [Y/N]: ").upper()
 	while answer != "Y" and answer != "N":
-		print("\n*ERROR: INVALID ENTRY!* Please enter Y or N: ")
-		answer = input("\nWould you like the reserve a seat? [Y/N]: ").upper()
+		print("\n*ERROR* *INVALID ENTRY* Please enter Y or N: ")
+		answer = input("\nWould you like to reserve a seat? [Y/N]: ").upper()
 
-print("\nThank you for choosing to fly with us.")
+print("\n\tThank you for choosing to fly with us.\n")

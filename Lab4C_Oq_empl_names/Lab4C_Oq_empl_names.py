@@ -6,43 +6,18 @@
 #------------------------------------------------------------------
 
 
-#   Lab4c       -   file stored in location defined in open
-#   col         -   used to read one column at a time from file
+#   lab4c           -   file stored in location defined in open
+#   col             -   used to read one column at a time from file
 
-#   fName       =   employee first name
-#   lName       =   employee last name
-#   emPhone     =   employee phone number
-#   emEmail        =   employee email
-#   dept        =   employee department
-#   emPos       =   employee position in department
-#   empCount    =   total number of employees
+#   fnameList       =   employee first name
+#   lnameList       =   employee last name
+#   emphoneList     =   employee phone number
+#   ememList        =   employee email
+#   deptList        =   employee department
+#   emposList       =   employee position in department
+#   empCount        =   total number of employees
 
 #-----------------------------------------------------------------
-
-
-def nameSearch(search):
-
-        for pos in range(0, 73):
-            if search == lnameList[pos]:
-                #empInfo()
-                print("\nTotal Employees Searched Through: {0}".format(len(lnameList)))
-                print("\n {0}\n {1}\n {2}\n {3}\n {4}\n {5}\n".format(fnameList[pos], lnameList[pos], emphoneList[pos], ememList[pos], deptList[pos], emposList[pos]))
-
-            else:
-                print("\n*ERROR: User Not Found*")
-                print("\nTotal Employees Searched Through: {0}".format(len(lnameList)))
-
-                  
-
-def empInfo():
-
-        print("{0:8} {1:8}".format(fnameList[pos], lnameList[pos]))
-        print("{0:11} {1:32}".format(emphoneList[pos], ememList[pos]))
-        print("{0:10} {1:13}".format(deptList[pos], emposList[pos]))
-
-
-
-#-----------------------------------------------------------------------
 
 import csv
 
@@ -55,8 +30,6 @@ emposList = []
 
 empCount = 0
 
-
-
 with open("D:\Lab4c.txt") as txtfile:
     lab4c = csv.reader(txtfile)
 
@@ -68,9 +41,34 @@ with open("D:\Lab4c.txt") as txtfile:
         deptList.append(col[4])
         emposList.append(col[5])
     
-answer = "y"
-while answer == "y":
 
-    search = input("Enter employee's last name (case-sensitive): ")
-    nameSearch(search)
+
+answer = "Y"
+while answer == "Y":
+
+    length = len(lnameList)
+    found = "False"
+
+    search = input("\nEnter employee's last name (case-sensitive): ")
+ 
+    for x in range(0, len(lnameList)):
+        if search == lnameList[x]:
+            found = "True"
+            position = x
+
+    if found == "True":
+       print("\n\t{0:8}{1:8}".format(fnameList[position], lnameList[position]))
+       print("\n\t{0:11} \t{1:32}".format(emphoneList[position], ememList[position]))
+       print("\n\t{0:10} \t{1:13}".format(deptList[position], emposList[position]))
+        
+       print("\nTotal Records Searched Through: {0}".format(len(lnameList)))
+    else:
+        print("\n*ERROR: User Not Found*")
+         
+        print("\nTotal Records Searched Through: {0}".format(len(lnameList)))
+
+    answer = input("\nWould you like to search again? [Y/N]: ").upper()
+ 
     
+
+print("\nSearch complete")
