@@ -1,0 +1,58 @@
+
+
+binary search
+
+searchName = input("Enter name: ")
+min = 0
+max = len(names)-1
+guess = int((min+max)/2)
+while searchName != names[guess] and min <= max:
+	if searchName < names[guess]:
+		max = guess-1
+	else:
+		min = guess+1
+	guess = int((min+max)/2)
+
+if searchName == names[guess]:
+	found = "true"
+	print
+else:
+	print("Not found")
+	
+for i in range(0, 3):
+	print(address[i].rjust(30, " "))
+	
+	rjust
+	ljust
+	cjust
+	
+	
+	
+	
+	
+#.split the user input ip_address and assign a variable
+  iplist = ip_address.split('.')
+
+  #cast iplist so python recognizes it as an actual number value able to be used in calculations
+  octet1 = int(iplist[0])
+
+  if octet1 >= 1 and octet1 <= 127:
+    ipclass = "A"
+
+  elif octet1 >= 128 and octet1 <= 191:
+    ipclass = "B"
+
+  elif octet1 >= 192 and octet1 <= 223:
+    ipclass = "C"
+
+  else:
+    ipclass = "undefined"
+
+  print("\n\tIP Address \t\t{0}".format(ip_address))
+  print("\tClass: \t\t\t{0}".format(ipclass))
+
+  answer = input("\nWould you like to enter another IP address? [Y/N]: ")
+
+
+print("\n\n\tThank you for using our program")
+
