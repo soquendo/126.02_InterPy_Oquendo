@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Lab7_salaryOrder_Oquendo", "Lab7_salaryOrder_Oquendo.pyproj", "{4E0D65F0-3FEB-444D-840B-A9A18F9E8CBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E0D65F0-3FEB-444D-840B-A9A18F9E8CBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E0D65F0-3FEB-444D-840B-A9A18F9E8CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B499C46-8276-4ADA-A01C-802B788E4B45}
+	EndGlobalSection
+EndGlobal

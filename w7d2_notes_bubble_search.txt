@@ -1,0 +1,42 @@
+#x = 15, y = 9
+#swap
+
+#t = x
+#x = y
+#y = t
+
+
+def swap(list, x):
+	temp = list[x]
+	list[x] = list[x + 1]
+	list[x + 1] = temp
+	
+
+
+names = ["Sam", "Carole", "Adam", "Bill", "Bobby", "Morgan", "Whitney", "Tom"]
+ages = [30, 18, 22, 20, 23, 31, 19, 21]
+
+for i in range(0,4):
+	print(names[i], " ", ages[i])
+	
+
+for i in range(0,4):
+	for j in range(0,3):
+		if names[j] > names[j + 1]:
+		
+			swap(names, j)
+			swap(ages, j)
+		
+		
+			#temp = names[j]
+			#names[j] = names[j + 1]
+			#names[j + 1] = temp
+			
+			#temp = ages[j]
+			#ages[j] = ages[j + 1]
+			#ages[j + 1] = temp
+			
+print("\n\n\n")
+for i in range(7, 5, -1):
+	print(names[i], " ", ages[i])
+#print(names[i], " ", ages[i])
