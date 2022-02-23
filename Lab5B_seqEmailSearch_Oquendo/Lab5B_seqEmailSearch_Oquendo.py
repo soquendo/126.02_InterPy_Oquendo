@@ -4,7 +4,7 @@
 #02-16-22
 #Lab5B
 
-#------------------------------------------------------------------
+#--------------------------------------------
 
 #   lab5B       -   file stored in location defined in open
 #   col         -   used to read one column at a time from file
@@ -16,7 +16,7 @@
 #   dept        =   employee department
 #   deptPos     =   employee position in department
 
-#--------------------------------------------------
+#--------------------------------------------
 
 #   Using the “sequential search” write a program that changes the email
 #   address for all employees who work in the MIS Department.  Currently 
@@ -26,8 +26,8 @@
 #   Before the progrqam exits display the number of addresses that were
 #   changed. You must use a function that searches for the email address and
 #   a function that changes the email address.
+#--------------------------------------------
 
-#=====================================
 import csv
 
 fname = []
@@ -36,24 +36,26 @@ phone = []
 email = []
 dept = []
 deptPos = []
+newEmails = []
 
 corrected = 0
 
-prefix = email.split('.')
+#--------------------------------------------
 
-#====================================
-def emSearch():
+def deptSearch():
     for x in range(0, len(dept)):
         if dept[x] == "MIS":
+            corrected +1
             changeEmail(x)
 
-def changeEmail(x):
-    prefix.append
-    email = prefix[x] + ".net"
-    print(email[x])
-    corrected +1
+def changeEmail():
+    newEmail = email.replace(".com", ".net")
+    newEmails.append(newEmail)
+    print(newEmails)
+
             
-#=====================================
+#--------------------------------------------
+
 with open("D:\Lab5B.txt") as txtfile:
     lab5B = csv.reader(txtfile)
 
@@ -67,7 +69,8 @@ with open("D:\Lab5B.txt") as txtfile:
         
 
 #====================================
-emSearch()
+
+deptSearch()
         
 print("\nTotal Records Corrected: {0}".format(corrected))
 
