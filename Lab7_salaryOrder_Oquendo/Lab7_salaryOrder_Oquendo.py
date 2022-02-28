@@ -30,13 +30,6 @@
 
 #==================================================
 
-def swap(list, x):
-    temp = list[x]
-    list[x] = list[x + 1]
-    list[x + 1] = temp
-
-
-
 import csv
 
 fname = []
@@ -58,22 +51,33 @@ with open("D:\Lab7.csv") as csvfile:
         salary.append(int(col[4]))
 
 totalSalary = 0
+totalSalaryMIS = 0
 
-for m in range(0, len(salary)):
-    if salary[m] > 1:
+def swap(list, x):
+    temp = list[x]
+    list[x] = list[x + 1]
+    list[x + 1] = temp
+
+for b in range(0, len(dept)):
+    if dept[b] == "MIS":
+       totalSalaryMIS = salary[b] + totalSalaryMIS
+       avgSalaryMIS = totalSalaryMIS/(len(salary[b]))
+
+for d in range(0, len(salary)):
+    if salary[d] > 1:
+        totalSalary = salary[d] + totalSalary
         fivepct = totalSalary * .05
 
-for msi in range(0, len(dept)):
-    if dept[msi] == "MSI":
-       totalSalary = salary[m] + totalSalary
-       avgSalary = totalSalary/(len(salary))
+
 
 
         
+#B
+print("Average salary for MIS Dept.: ${0:7.2f}".format(avgSalaryMIS))
 
-print("Average employee salary: ${0:7.2f}".format(avgSalary))
 #D
-print("Total cost of increasing all salaries by 5%: ${0:9.2f}".format(fivepct))
+print("Total cost of increasing all employee salaries by 5%: ${0:9.2f}".format(fivepct))
+
 #print(salary[x].ljust(7), lname[x].cjust(20), dept[x].rjust(15))
 print("Total employees: ", len(salary))
 
