@@ -39,6 +39,7 @@ deptPos = []
 salary = []
 
 tempList = []
+misDept = []
 
 with open("D:\Lab7.csv") as csvfile:
     lab7 = csv.reader(csvfile)
@@ -58,28 +59,66 @@ def swap(list, x):
     list[x] = list[x + 1]
     list[x + 1] = temp
 
+def mySort(lname, salary, dept):
+    length = len(lname)
+    for i in range(0, length):
+        for j in range(0, length - 1):
+            if (salary[j] > salary[j + 1]):
+
+                swap(lname, j)
+                swap(salary, j)
+                swap(dept, j)
+
+#for sum in range(0, length):
+    #displayList.append(last[sum] + dept[sum] + salary[sum])
+
+length = len(lname)
+
+for i in range(0, length):
+    tempList.append(lname[i] + dept[i])  
+
 for b in range(0, len(dept)):
     if dept[b] == "MIS":
-       totalSalaryMIS = salary[b] + totalSalaryMIS
-       avgSalaryMIS = totalSalaryMIS/(len(salary[b]))
+        misDept.append(lname[b] + dept[b])
+        totalSalaryMIS = salary[b] + totalSalaryMIS
+        #avgSalaryMIS = totalSalaryMIS/(len(salary))
+        print(lname[b], salary[b], dept[b])
 
 for d in range(0, len(salary)):
     if salary[d] > 1:
         totalSalary = salary[d] + totalSalary
         fivepct = totalSalary * .05
 
+mySort(lname, salary, dept)
 
 
+print("\n\nlname[i] and salary[i]")
+for i in range(0, length):
+    print(lname[i], "  ", salary[i])
 
+
+#A
+
+print("\nHighest Company Salaries")
+for i in range(length -1, length -11, -1):
+    print(salary[i], lname[i], dept[i])
         
 #B
-print("Average salary for MIS Dept.: ${0:7.2f}".format(avgSalaryMIS))
+
+#print("\nAverage salary for MIS Dept.: ${0:7.2f}".format(avgSalaryMIS))
+
+#C
+print("\nLowest Company Salaries")
+#print("\n\nSalary, Last Name, Dept")
+for s in range(0, 10):
+    print(salary[s], lname[s], dept[s])
 
 #D
-print("Total cost of increasing all employee salaries by 5%: ${0:9.2f}".format(fivepct))
+
+print("\nTotal cost of increasing all employee salaries by 5%: ${0:9.2f}".format(fivepct))
 
 #print(salary[x].ljust(7), lname[x].cjust(20), dept[x].rjust(15))
-print("Total employees: ", len(salary))
+print("\nTotal employees: ", len(salary))
 
 
 #for i in range(0,5):
