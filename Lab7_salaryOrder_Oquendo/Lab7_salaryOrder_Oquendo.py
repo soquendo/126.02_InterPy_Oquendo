@@ -39,7 +39,13 @@ deptPos = []
 salary = []
 
 tempList = []
+abcList = []
+
+homeDept = []
+invDept = []
+lifeDept = []
 misDept = []
+transDept = []
 
 with open("D:\Lab7.csv") as csvfile:
     lab7 = csv.reader(csvfile)
@@ -69,8 +75,15 @@ def mySort(lname, salary, dept):
                 swap(salary, j)
                 swap(dept, j)
 
-#for sum in range(0, length):
-    #displayList.append(last[sum] + dept[sum] + salary[sum])
+
+def abc(fname, lname, dept):
+    for i in range(0, length):
+        for j in range(0, length - 1):
+            if (lname[j] > lname[j + 1]):
+            
+                swap(fname, j)
+                swap(lname, j)
+                swap(dept, j)
 
 length = len(lname)
 
@@ -78,11 +91,21 @@ for i in range(0, length):
     tempList.append(lname[i] + dept[i])  
 
 for b in range(0, len(dept)):
+    if dept[b] == "Investments":
+        invDept.append(lname[b] + fname[b] + dept[b])
+    if dept[b] == "Homeowners":
+        homeDept.append(lname[b] + fname[b] + dept[b])
+    if dept[b] == "Life":
+        lifeDept.append(lname[b] + fname[b] + dept[b])
     if dept[b] == "MIS":
-        misDept.append(lname[b] + dept[b])
-        totalSalaryMIS = salary[b] + totalSalaryMIS
-        #avgSalaryMIS = totalSalaryMIS/(len(salary))
-        print(lname[b], salary[b], dept[b])
+        misDept.append(lname[b] + fname[b] + dept[b])
+    if dept[b] == "Transportation":
+        transDept.append(lname[b] + fname[b] + dept[b])
+
+for i in range(0, len(misDept)):
+    if salary[i] > 1:
+        totalSalaryMIS = salary[i] + totalSalaryMIS
+        avgSalaryMIS = totalSalaryMIS/(len(misDept))
 
 for d in range(0, len(salary)):
     if salary[d] > 1:
@@ -91,38 +114,31 @@ for d in range(0, len(salary)):
 
 mySort(lname, salary, dept)
 
-
-print("\n\nlname[i] and salary[i]")
-for i in range(0, length):
-    print(lname[i], "  ", salary[i])
-
-
 #A
 
 print("\nHighest Company Salaries")
 for i in range(length -1, length -11, -1):
     print(salary[i], lname[i], dept[i])
         
-#B
 
-#print("\nAverage salary for MIS Dept.: ${0:7.2f}".format(avgSalaryMIS))
+#B
+print("\nAverage salary for MIS Dept.: ${0:7.2f}".format(avgSalaryMIS))
+
 
 #C
 print("\nLowest Company Salaries")
 #print("\n\nSalary, Last Name, Dept")
-for s in range(0, 10):
+for s in range(9, -1, -1):
     print(salary[s], lname[s], dept[s])
 
+
 #D
-
-print("\nTotal cost of increasing all employee salaries by 5%: ${0:9.2f}".format(fivepct))
-
-#print(salary[x].ljust(7), lname[x].cjust(20), dept[x].rjust(15))
-print("\nTotal employees: ", len(salary))
+print("\nCost of 5% raise for all employees: ${0:9.2f}".format(fivepct))
 
 
-#for i in range(0,5):
+#E -------------- couldn't make it work --------
+#abc(fname, lname, dept)
+#for i in range(0, 4):
+   #if dept[i] == "Investments":
+       #print(lname[i], fname[i], dept[i])
 
-#for i in range(length of list -1, 6, -1)
-
-#for i in range(length of list -1, len of list - 5, -1)
