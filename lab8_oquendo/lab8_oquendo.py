@@ -107,5 +107,22 @@ with open("D:\lab8.csv") as csvfile:
         fourCol.append(col[30])
 
 
-print(rowCol)
-    
+def seatMap(a0, aA, aB, aC, aD, aE, aF, aG, aH, aI, aJ, aK, aL, aM, aN, aO, aP, aQ, aR, aS, aT, aU, aV, aW, aX, aY, aZ, a1, a2, a3, a4):
+    for i in range (0, 16):
+        print(" Row", i, " ", a0[i], aA[i], aB[i], aC[i], aD[i], aE[i], aF[i], aG[i], aH[i], aI[i], aJ[i], aK[i], aL[i], aM[i], aN[i], aO[i], aP[i], aQ[i], aR[i], aS[i], aT[i], aU[i], aV[i], aW[i], aX[i], aY[i], aZ[i], a1[i], a2[i], a3[i], a4[i])
+   
+
+answer = "Y"    
+while answer == "Y":
+
+    print("\n		 SEATING CHART\n\n")
+    seatMap(rowCol, aCol, bCol, cCol, dCol, eCol, fCol, gCol, hCol, iCol, jCol, kCol, lCol, mCol, nCol, oCol, pCol, qCol, rCol, sCol, tCol, uCol, vCol, wCol, xCol, yCol, zCol, oneCol, twoCol, threeCol, fourCol)
+
+
+
+    answer = input("\nWould you like to reserve a seat? [Y/N]: ").upper()
+    while answer != "Y" and answer != "N":
+		print("\n*ERROR* *INVALID ENTRY* Please enter Y or N: ")
+		answer = input("\nWould you like to reserve a seat? [Y/N]: ").upper()
+
+print("Thank you for using the program")
